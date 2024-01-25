@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Sand</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90vw;
+            height: 70vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <body>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="parent" id="canvas-container">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+                <script src="scripts/sketch.js"></script>
+            </div>
+
+            <div style="padding-top: 20px;">
+                <button style="padding: 20px;" onclick="sortPressed()">Sort</button>
+            </div>
+
+            <div style="padding-top: 20px;">
+                <label for="colorPicker">Sand Color:</label>
+                <input type="color" id="colorPicker" name="colorPicker" value="#ff0000" onchange="updateColor()">
+            </div>
+        </div>
+    </body>
