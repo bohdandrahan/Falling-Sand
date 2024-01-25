@@ -1,4 +1,4 @@
-let selectedColor = 'red';
+let selectedColor = "#ff0000";
 function setup() {
     let canvasContainer = document.getElementById('canvas-container');
     let containerWidth = canvasContainer.offsetWidth;
@@ -10,7 +10,7 @@ function setup() {
 
 
 function draw() {
-    background(selectedColor);
+    background('#161616');
 }
 function updateColor() {
     let colorPicker = document.getElementById("colorPicker");
