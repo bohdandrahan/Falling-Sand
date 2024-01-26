@@ -25,6 +25,22 @@ function setup() {
 
 function draw() {
     background('#161616');
+    if (mouseIsPressed) {
+        let col = floor(mouseX / w);
+        let row = floor(mouseY / w);
+
+        color = graduallyChangeColor(color, increment);
+        for (let i = -strokeValue; i <= strokeValue; i++) {
+            for (let j = -strokeValue; j <= strokeValue; j++) {
+                let newCol = col + i;
+                let newRow = row + j;
+
+                if (newCol < cols && newRow < rows && newCol >= 0 && newRow >= 0) {
+                    grid[newCol][newRow] = [1, color];
+                }
+            }
+        }
+    }
 
     for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
@@ -89,30 +105,10 @@ function make2DArray(cols, rows) {
     }
     return arr;
 }
-function mousePressed() {
-    mouseDragged()
-}
-function mouseDragged() {
-    let col = floor(mouseX / w);
-    let row = floor(mouseY / w);
 
-    color = graduallyChangeColor(color, increment);
-    for (let i = -strokeValue; i <= strokeValue; i++) {
-        for (let j = -strokeValue; j <= strokeValue; j++) {
-            let newCol = col + i;
-            let newRow = row + j;
-
-            if (newCol < cols && newRow < rows && newCol >= 0 && newRow >= 0) {
-                grid[newCol][newRow] = [1, color];
-            }
-        }
-    }
-}
 
 function mouseReleased() {
     color = selectedColor;
-    console.log(selectedColor)
-
 }
 
 function updateColor() {
