@@ -1,10 +1,10 @@
 let selectedColor = "#ff0000";
 let grid;
 let w = 2;
-let strokeValue = 3;
+let strokeValue = 8;
 let cols, rows;
 let color = selectedColor;
-let increment = 3;
+let increment = 10;
 
 function setup() {
     let canvasContainer = document.getElementById('canvas-container');
@@ -96,7 +96,6 @@ function mouseDragged() {
     let col = floor(mouseX / w);
     let row = floor(mouseY / w);
 
-    newCol < cols && newRow < rows && newCol >= 0 && newRow >= 0
     color = graduallyChangeColor(color, increment);
     for (let i = -strokeValue; i <= strokeValue; i++) {
         for (let j = -strokeValue; j <= strokeValue; j++) {
@@ -110,8 +109,9 @@ function mouseDragged() {
     }
 }
 
-function mouseRelesed() {
+function mouseReleased() {
     color = selectedColor;
+    console.log(selectedColor)
 
 }
 
