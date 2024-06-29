@@ -10,7 +10,7 @@
         html {
             height: 100%;
             margin: 0;
-            background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(105, 46, 0));
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(170, 170, 170));
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -18,7 +18,8 @@
         }
 
         h1 {
-            color: wheat;
+            color: rgb(15, 40, 0);
+
         }
 
         .parent {
@@ -42,18 +43,18 @@
             <script src="scripts/sketch.js"></script>
         </div>
 
-        <div style="padding-top: 20px; color:wheat">
+        <div style="padding-top: 20px; color:rgb(15, 40, 0);">
             <label for="colorPicker">Sand Color:</label>
             <input type="color" id="colorPicker" name="colorPicker" value="#ff0000" onchange="updateColor()">
 
             <label for="strokeSlider">Stroke:</label>
-            <input type="range" id="strokeSlider" name="strokeSlider" min="1" max="20" value="8"
+            <input type=/range" id="strokeSlider" name="strokeSlider" min="1" max="20" value="8"
                 onchange="updateStroke()">
 
             <button style='padding:10px; background-color:rgb(255, 157, 0)' onclick="resetCanvas()">Reset</button>
         </div>
 
-        <div style="padding-top: 20px; color:wheat">
+        <div style="padding-top: 20px; color:rgb(15, 40, 0);">
 
             <label for="strokeSlider">Color Mutation:</label>
             <input type="range" id="incrementSlider" name="incrementSlider" min="1" max="40" value="10"
